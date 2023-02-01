@@ -93,6 +93,8 @@ function App() {
             onClick={() => {
               if (currentIdx > 0) {
                 setCurrentIdx(currentIdx - 1);
+              } else {
+                setCurrentIdx(itemData.length - 1)
               }
             }}
           >
@@ -102,8 +104,10 @@ function App() {
           <Button
             variant='default'
             onClick={() => {
-              if (currentIdx <= itemData.length - 1) {
+              if (currentIdx < itemData.length - 1) {
                 setCurrentIdx(currentIdx + 1);
+              } else {
+                setCurrentIdx(0)
               }
             }}
           >
