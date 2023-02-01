@@ -12,7 +12,7 @@ export default function Article({ title, img, text, link }) {
         <img src={img} alt="" />
       
       </div>
-      <a href={link}>{link}</a>
+      <a href={link} target='_blank'>{link}</a>
     </article>
   )
 }
