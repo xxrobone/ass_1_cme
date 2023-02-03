@@ -14,7 +14,7 @@ import Hero from './components/hero/Hero';
 import articIMG1 from './assets/images/GW.png'
 import articIMG2 from './assets/images/hoodie.png'
 
-
+/* 
 const Article1 = () => {
   return (
     <article>
@@ -35,10 +35,13 @@ const Article2 = () => {
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fugiat hic quod minima, cupiditate vitae nobis inventore tempore, possimus voluptatem ut incidunt eum. Repellat nisi sit hic. Adipisci, voluptatem quisquam recusandae et vero dolor ut iste vitae consequatur ad accusantium?</p>
     </article>
   )
-}
+} */
 
+
+
+      
 function App() {
- /*  const [active, setActive] = useState('article1'); */
+ const [active, setActive] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
 /* 
   const onChangeHandler = () => {
@@ -50,6 +53,22 @@ function App() {
     }
     
   } */
+
+  const prevBtn = () => {
+    if (currentIdx > 0) {
+      setCurrentIdx(currentIdx - 1);
+    } else {
+      setCurrentIdx(itemData.length - 1)
+    }
+  }
+
+  const nextBtn = () => {
+    if (currentIdx < itemData.length - 1) {
+      setCurrentIdx(currentIdx + 1);
+    } else {
+      setCurrentIdx(0)
+    }
+  }
 
   console.log(currentIdx);
   return (
@@ -64,14 +83,8 @@ function App() {
       </Header>
       <main>
         <Hero />
-       {/*  <div className="cme">
-          <Article1 className={`active ${getActiveClassName(active, 'article1')}`} />
-          <Article2 className={`active ${getActiveClassName(active, 'article2')}`} />
-          <Button variant='default' onClick={() => onChangeHandler}>Switch Article</Button>
-        </div> */}
         <div className='content_wrapper'>
           {itemData.map((item, i) => {
-            /* console.log(i); */
 
             if (currentIdx === i) {
               return (
@@ -90,26 +103,14 @@ function App() {
         <div className='buttons'>
           <Button
             variant='default'
-            onClick={() => {
-              if (currentIdx > 0) {
-                setCurrentIdx(currentIdx - 1);
-              } else {
-                setCurrentIdx(itemData.length - 1)
-              }
-            }}
+            onClick={() => prevBtn()}
           >
             Prev
           </Button>
          {/*  <Button variant="default" onClick={() => }>Show All</Button> */}
           <Button
             variant='default'
-            onClick={() => {
-              if (currentIdx < itemData.length - 1) {
-                setCurrentIdx(currentIdx + 1);
-              } else {
-                setCurrentIdx(0)
-              }
-            }}
+            onClick={() => nextBtn()}
           >
             Next
           </Button>

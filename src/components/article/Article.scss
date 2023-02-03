@@ -2,13 +2,14 @@
 article {
     padding: 1rem 1rem;
     width: 100%;
-    max-height: inherit;
+    max-height: 400px;
     opacity: 1;
     transition: width 0.4s ease-in-out, opacity 0.3s ease-out;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: black;
+    overflow: hidden;
 
     @media (min-width: 768px) {
       padding: 1rem 4rem;
@@ -41,8 +42,8 @@ article {
         img {
           margin: 0.5rem;
           shape-outside: ellipse(50% 50%);
-          width: 150px;          
-          height: 200px;
+          width: 100px;          
+          height: 150px;
           object-fit: cover;
           object-position: center;
           
