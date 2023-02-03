@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // styles
 import './NavItem.scss'
 
-export default function NavItem({title, href, cls, id}) {
+export default function NavItem({title, path, cls, id}) {
   return (
       <li className={cls} key={id}>
-          <a className="nav_link" href={href}>{title}</a>
+          <Link className="nav_link" to={path}>{title}</Link>
     </li>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Header from './components/header/Header';
 import Logo from './components/logo/Logo';
@@ -14,29 +14,8 @@ import Hero from './components/hero/Hero';
 import articIMG1 from './assets/images/GW.png'
 import articIMG2 from './assets/images/hoodie.png'
 import ImageBg from './components/article/imagebg/ImageBg';
-
-/* 
-const Article1 = () => {
-  return (
-    <article>
-      <h2>My coding journey</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fugiat hic quod minima, cupiditate vitae nobis inventore tempore, possimus voluptatem ut incidunt eum. Repellat nisi sit hic. Adipisci, voluptatem quisquam recusandae et vero dolor ut iste vitae consequatur ad accusantium?</p>
-      <img src={articIMG2} alt="" />
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fugiat hic quod minima, cupiditate vitae nobis inventore tempore, possimus voluptatem ut incidunt eum. Repellat nisi sit hic. Adipisci, voluptatem quisquam recusandae et vero dolor ut iste vitae consequatur ad accusantium?</p>
-    </article>
-  )
-}
-
-const Article2 = () => {
-  return (
-    <article>
-      <h2>Article 2 tow you boo boo</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fugiat hic quod minima, cupiditate vitae nobis inventore tempore, possimus voluptatem ut incidunt eum. Repellat nisi sit hic. Adipisci, voluptatem quisquam recusandae et vero dolor ut iste vitae consequatur ad accusantium?</p>
-      <img src={articIMG1} alt="" />
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fugiat hic quod minima, cupiditate vitae nobis inventore tempore, possimus voluptatem ut incidunt eum. Repellat nisi sit hic. Adipisci, voluptatem quisquam recusandae et vero dolor ut iste vitae consequatur ad accusantium?</p>
-    </article>
-  )
-} */
+import { About } from './pages/about/About';
+import { Todo } from './pages/todo/Todo';
 
 
 
@@ -44,16 +23,6 @@ const Article2 = () => {
 function App() {
  const [active, setActive] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
-/* 
-  const onChangeHandler = () => {
-    if (active === 'article1') {
-     setActive('article1')
-    }
-    else {
-      setActive('article2')
-    }
-    
-  } */
 
   const prevBtn = () => {
     if (currentIdx > 0) {
@@ -77,54 +46,54 @@ function App() {
       <Header>
         <Logo />
         <Nav>
-          {navData.map(({ title, href, cls, id }, i) => (
-            <NavItem title={title} href={href} cls={cls} key={id} />
+          {navData.map(({ title, path, cls, id }, i) => (
+            <NavItem title={title} path={path} cls={cls} key={id} />
           ))}
         </Nav>
       </Header>
-      <main>
-        <Hero />
-        <div className='content_wrapper'>
-          {itemData.map((item, i) => {
-            if (currentIdx === i) {
-              return (
-                <>
-                  <ImageBg {...item} key={item.title} />
-                <Article
-                  {...item}
-                  key={i}
-                />
-                </>
-              );
-            }
-          })}
-        </div>
+      <Routes>
+        <Route path='/' element={
+          <>           
+            <main>
+           <Hero />
+           <div className='content_wrapper'>
+             {itemData.map((item, i) => {
+               if (currentIdx === i) {
+                 return (
+                   <>
+                     <ImageBg {...item} key={item.title} />
+                   <Article
+                     {...item}
+                     key={i}
+                   />
+                   </>
+                 );
+               }
+             })}
+           </div>
+           <div className='buttons'>
+             <Button
+               variant='default'
+               onClick={() => prevBtn()}
+             >
+               Prev
+             </Button>
+             <Button
+               variant='default'
+               onClick={() => nextBtn()}
+             >
+               Next
+             </Button>
+           </div>
+          
+           </main>
+          </>
 
-        <div className='buttons'>
-          <Button
-            variant='default'
-            onClick={() => prevBtn()}
-          >
-            Prev
-          </Button>
-         {/*  <Button variant="default" onClick={() => }>Show All</Button> */}
-          <Button
-            variant='default'
-            onClick={() => nextBtn()}
-          >
-            Next
-          </Button>
-        </div>
-        {/*   <article>
-          <h2>Title</h2>
-          <div className='content'>
-            <p>
-             
-            </p>
-            <img src={img1} alt='' />
-          </div>
-        </article> */}
-      </main>
+        }
+      />
+        <Route path='/about' element={<About/>} />
+        <Route path='/todo' element={<Todo/>} />
+        </Routes>
       <Footer />
     </div>
   );

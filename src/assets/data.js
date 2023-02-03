@@ -5,25 +5,25 @@ import img3 from './images/hoodie.png';
 export const navData = [
   {
     title: 'home',
-    href: '/',
+    path: '/',
     cls: 'nav_item',
     id: 1,
   },
   {
     title: 'about',
-    href: '/',
+    path: '/about',
     cls: 'nav_item',
     id: 2,
   },
   {
-    title: 'work',
-    href: '/',
+    title: 'todo',
+    path: '/todo',
     cls: 'nav_item',
     id: 3,
   },
   {
     title: 'contact',
-    href: '/',
+    path: '/contact',
     cls: 'nav_item',
     id: 4,
   },
