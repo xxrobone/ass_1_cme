@@ -86,13 +86,11 @@ function App() {
         <div className='content_wrapper'>
           {itemData.map((item, i) => {
 
+            const {title, img, text, link } = item
             if (currentIdx === i) {
               return (
                 <Article
-                  title={item.title}
-                  img={item.img}
-                  text={item.text}
-                  link={item.link}
+                  {...item}
                   key={i}
                 />
               );
