@@ -33,7 +33,7 @@ export const itemData = [
   {
     title: 'My coding experience',
     img: img1,
-    text: 'So I have been coding intensively the past 2 years, I have also taken courses on JAVA (basic level) and C# (Basic + level). \nMy main focus has been on html, css and javascript, web-development. I also tried out a few frameworks smaller project in vue, and most projects are done in React or Nextjs. I also like animations and have worked with anime.js and framer-motion. For styling I worked with css, I prefer sass, styled-components is very useful with react, or a smaller libraray called Goober. I have done a few projects You can check out my Portfolio page for that check link below, all done in "vanilla" js, html and css :D',
+    text: 'I have been coding intensively the past 2 years, I have also taken courses on JAVA (basic level) and C# (Basic + level). \nMy main focus has been on html, css and javascript, web-development. I also tried out a few frameworks smaller project in vue, and most projects are done in React or Nextjs. I also like animations and have worked with anime.js and framer-motion. For styling I worked with css, I prefer sass or css.modules, also worked with styled-components is very useful with react, or a smaller libraray called Goober. I have done a few projects You can check out my Portfolio page for that check link below, all done in "vanilla" js, html and css :D',
     link: 'https://www.robertwagar.se',
   },
   {

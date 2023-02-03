@@ -85,8 +85,6 @@ function App() {
         <Hero />
         <div className='content_wrapper'>
           {itemData.map((item, i) => {
-
-            const {title, img, text, link } = item
             if (currentIdx === i) {
               return (
                 <Article
