@@ -13,9 +13,6 @@ import Hero from './components/hero/Hero';
 import ImageBg from './components/article/imagebg/ImageBg';
 import { About } from './pages/about/About';
 import { Todo } from './pages/todo/Todo';
-
-
-
       
 function App() {
 /*  const [active, setActive] = useState(false); */
@@ -87,7 +84,7 @@ function App() {
           </>
 
         }
-      />
+        />
         <Route path='/about' element={<About/>} />
         <Route path='/todo' element={<Todo/>} />
         </Routes>

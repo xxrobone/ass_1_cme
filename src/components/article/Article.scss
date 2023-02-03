@@ -1,14 +1,18 @@
 
 article {
+    margin: 0 auto;
     padding: 1rem 1rem;
-    width: 100%;
-    height: 380px;
+    position: relative;
+    width: 80%;
+    height: 260px;
     transition: width 0.4s ease-in-out, opacity 0.3s ease-out;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: rgba(0, 0, 0, 0.766);
     overflow: hidden;
+
+    z-index: 2;
 
     @media (min-width: 768px) {
       padding: 1rem 4rem;
@@ -18,28 +22,30 @@ article {
       margin-bottom: 1rem;
     }  
   
-    .content {  
+    .content { 
+      height: 80%;
       display: flex;  
+      align-items: center;
       border: 1px solid orange;
   
       p {
-        padding: 0.5rem 0.25rem;
+        margin: 0.5rem;
         float: left;
         font-size: 0.8rem;   
-        overflow-y: scroll;
-        background-color: rgb(0, 0, 0);
+        height: fit-content;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+          overflow: hidden;
         
         @media (min-width: 768px) {
-          font-size: 1rem;   
-          overflow-y: hidden;       
+          font-size: 1rem;         
         }
       
       }
        
-
         img {
           margin: 0.5rem;
-          shape-outside: ellipse(50% 50%);
           width: 100px;          
           height: 150px;
           object-fit: cover;
@@ -51,15 +57,31 @@ article {
             
         }
       }
-    
+      .homepage {
+        text-decoration: none;
+        color: rgb(93, 77, 242);
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        max-width: fit-content;
+      }
      
     }  
 
-    a {
-      color: aquamarine;
-      position: relative;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      text-align: center;
+    .more_details {
+      a {
+        color: aquamarine;
+        position: relative;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        text-align: center;
+  
+        &:hover {
+          cursor: pointer;
+          color: lighten(aquamarine, 10%);
+        }
+      }
+
     }
   }

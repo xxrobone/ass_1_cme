@@ -39,8 +39,7 @@ const addTodo = (todo, setInput, todoList, setTodoList) => {
     localStorage.setItem("todos", JSON.stringify([...todoList, newTodo]));
 }
 
-const deleteTodo = (id, todoList, setTodoList) => {
-    
+const deleteTodo = (id, todoList, setTodoList) => {    
     // so if the todo id is not equal the id passed in, then it will be removed from the list
     const updatedList = todoList.filter((todo) => todo.id !== id)
 
