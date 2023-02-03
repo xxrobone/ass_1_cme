@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Button from '../../components/button/Button'
 
+
+// styles
+import './Todo.scss'
 /* 
 - Todo
 - a list of todos
@@ -28,6 +31,14 @@ const addTodo = (todo, setInput, todoList, setTodoList) => {
     setInput("")
 }
 
+const deleteTodo = (id, todoList, setTodoList) => {
+    
+    // so if the todo id is not equal the id passed in, then it will be removed from the list
+    const updatedList = todoList.filter((todo) => todo.id !== id)
+
+    setTodoList(updatedList)
+}
+
 export const Todo = () => {
     const [todoList, setTodoList] = useState([])
     const [input, setInput] = useState("")
@@ -50,11 +61,14 @@ export const Todo = () => {
           />
           <Button variant='todo' onClick={() => addTodo(input, setInput, todoList, setTodoList)}>Add</Button>
 
-          <div className='todo_list'>
+          <ul className='todo_list'>
               {todoList.map(t => (
-                  <p key={t.id}>{t.todo}</p>
+                  <li key={t.id}>
+                  <p>{t.todo}</p>
+                  <Button onClick={() => deleteTodo(t.id, todoList, setTodoList)}>&times;</Button>
+                  </li>
               ))}
-          </div>
+          </ul>
     </div>
   )
 }
