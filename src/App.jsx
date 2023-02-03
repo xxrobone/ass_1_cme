@@ -10,9 +10,6 @@ import Footer from './components/footer/Footer';
 import Article from './components/article/Article';
 import Button from './components/button/Button';
 import Hero from './components/hero/Hero';
-
-import articIMG1 from './assets/images/GW.png'
-import articIMG2 from './assets/images/hoodie.png'
 import ImageBg from './components/article/imagebg/ImageBg';
 import { About } from './pages/about/About';
 import { Todo } from './pages/todo/Todo';
@@ -61,10 +58,10 @@ function App() {
                if (currentIdx === i) {
                  return (
                    <>
-                     <ImageBg {...item} key={item.title + i} />
+                     <ImageBg {...item} key={Math.random() * 1000 + i} />
                     <Article
                      {...item}
-                     key={i}
+                     key={i + (Math.random() * 1000)}
                    />
                    </>
                  );

@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import Button from '../../components/button/Button'
 
+import { FcAddDatabase, FcEmptyTrash, FcCheckmark, FcNext } from "react-icons/fc";
+
 
 // styles
 import './Todo.scss'
 /* 
-- Todo
-- a list of todos
-- add todo
-- delete todo
+- Todo (done)
+- a list of todos (done)
+- add todo (done)
+- delete todo (done)
+
 - updatede todo
+- todo marked when done
 - search todos ? 
 
-- todo form
-- functions
+- localstorage ? (done, set, get and remove)
+
+- todo form (no form just inputs)
+- functions (add, delete)
 
 */
 
@@ -68,18 +74,23 @@ export const Todo = () => {
   return (
       <div>
           <h1>MY TODOS</h1>
+          <div className="add_todo_wrapper">
           <input
               type="text"
-              value={input}
+                  value={input}
+                  placeholder='Add todo'
               onChange={(e) => handleOnChange(e)}
           />
-          <Button variant='todo' onClick={() => addTodo(input, setInput, todoList, setTodoList)}>Add</Button>
+          <Button variant='todo_btn' onClick={() => addTodo(input, setInput, todoList, setTodoList)}><FcAddDatabase /></Button>
+              
+          </div>
 
           <ul className='todo_list'>
               {todoList.length > 0 && todoList.map(t => (
                   <li key={t.id}>
+                    <FcNext />
                   <p>{t.todo}</p>
-                  <Button onClick={() => deleteTodo(t.id, todoList, setTodoList)}>&times;</Button>
+                  <Button onClick={() => deleteTodo(t.id, todoList, setTodoList)}><FcEmptyTrash /></Button>
                   </li>
               ))}
           </ul>
