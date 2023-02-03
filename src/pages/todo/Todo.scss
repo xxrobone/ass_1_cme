@@ -46,10 +46,9 @@
 
     button {        
         svg {
-            fill: none;
-            fill: plum;
-            &:hover {
-                fill: tomato !important;
+           
+            &:hover > path {
+              fill: tomato;
             }
         }
     }
