@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../../components/button/Button'
 
 
@@ -29,6 +29,8 @@ const addTodo = (todo, setInput, todoList, setTodoList) => {
     setTodoList([...todoList, newTodo])
     // clearing input field
     setInput("")
+
+    localStorage.setItem("todos", JSON.stringify([...todoList, newTodo]));
 }
 
 const deleteTodo = (id, todoList, setTodoList) => {
@@ -37,6 +39,8 @@ const deleteTodo = (id, todoList, setTodoList) => {
     const updatedList = todoList.filter((todo) => todo.id !== id)
 
     setTodoList(updatedList)
+
+    localStorage.removeItem("todos", JSON.stringify(id));
 }
 
 export const Todo = () => {
@@ -51,6 +55,16 @@ export const Todo = () => {
         console.log(e.target.value)
     }
 
+    useEffect(() => {
+        const todos = JSON.parse(localStorage.getItem('todos'));
+        if (todos) {
+         setTodoList([...todos]);
+        } else {
+            setTodoList([])
+        }
+    }, [])
+    
+
   return (
       <div>
           <h1>MY TODOS</h1>
@@ -62,7 +76,7 @@ export const Todo = () => {
           <Button variant='todo' onClick={() => addTodo(input, setInput, todoList, setTodoList)}>Add</Button>
 
           <ul className='todo_list'>
-              {todoList.map(t => (
+              {todoList.length > 0 && todoList.map(t => (
                   <li key={t.id}>
                   <p>{t.todo}</p>
                   <Button onClick={() => deleteTodo(t.id, todoList, setTodoList)}>&times;</Button>
