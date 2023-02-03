@@ -8,7 +8,7 @@ article {
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.766);
     overflow: hidden;
 
     @media (min-width: 768px) {
@@ -30,6 +30,7 @@ article {
         float: left;
         font-size: 0.8rem;   
         overflow-y: scroll;
+        background-color: rgba(0, 0, 0, 0.807);
         
         @media (min-width: 768px) {
           font-size: 1rem;   

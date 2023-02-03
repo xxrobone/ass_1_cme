@@ -13,6 +13,7 @@ import Hero from './components/hero/Hero';
 
 import articIMG1 from './assets/images/GW.png'
 import articIMG2 from './assets/images/hoodie.png'
+import ImageBg from './components/article/imagebg/ImageBg';
 
 /* 
 const Article1 = () => {
@@ -87,10 +88,13 @@ function App() {
           {itemData.map((item, i) => {
             if (currentIdx === i) {
               return (
+                <>
+                  <ImageBg {...item} key={item.title} />
                 <Article
                   {...item}
                   key={i}
                 />
+                </>
               );
             }
           })}
