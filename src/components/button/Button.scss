@@ -31,3 +31,21 @@
     }
   }
   
+  
+  .todo {
+    margin: 1rem 0.5rem;
+    padding: 4px 6px;
+    border: none;
+    border-top: 1px solid #232328;
+    border-bottom: 1px solid #232328;
+    font-size: 0.8rem;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    font-weight: 400;
+  
+    &:hover {
+      background: #232328;
+      color: #f8f8f8;
+    }
+  }
+  

@@ -2,10 +2,10 @@ import React from 'react'
 
 import './Article.scss'
 
-export default function Article({ title, img, text, link }) {
+export default function Article({ title, img, text, link, key }) {
 
   return (
-      <article>
+      <article key={key}>
         <h2>{title}</h2>
         <div className="content">
         <p>{text}</p>

@@ -21,7 +21,7 @@ import { Todo } from './pages/todo/Todo';
 
       
 function App() {
- const [active, setActive] = useState(false);
+/*  const [active, setActive] = useState(false); */
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const prevBtn = () => {
@@ -46,7 +46,7 @@ function App() {
       <Header>
         <Logo />
         <Nav>
-          {navData.map(({ title, path, cls, id }, i) => (
+          {navData.map(({ title, path, cls, id }) => (
             <NavItem title={title} path={path} cls={cls} key={id} />
           ))}
         </Nav>
@@ -61,8 +61,8 @@ function App() {
                if (currentIdx === i) {
                  return (
                    <>
-                     <ImageBg {...item} key={item.title} />
-                   <Article
+                     <ImageBg {...item} key={item.title + i} />
+                    <Article
                      {...item}
                      key={i}
                    />
