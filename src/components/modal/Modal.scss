@@ -1,0 +1,49 @@
+.modal {
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+     margin: 0 auto;
+     padding: 0 2rem;
+     border-radius: 12px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;  
+ 
+ 
+ .glass {
+    /* used autoprefixer on this one */
+    border: 2px solid rgba(216, 216, 216, 0.15);    
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25), inset 0 0 2px 0px white;    
+            box-shadow: 0 0 10px rgba(0, 0, 0, .25), inset 0 0 2px 0px white;
+    background: rgba(0, 0, 0, .0125);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    pointer-events: all;
+ }
+ 
+ .close_btn {
+    padding: 0.25rem;
+   position: absolute;
+   top: 2rem;
+   right: -1rem;
+   z-index: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   outline: none;
+   border: none;  
+   border-radius: 50%;
+   background: tomato;
+   color: black;
+   font-size: 2rem;
+   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.55));
+   cursor: pointer;
+
+   &:hover {
+    transition: background 0.4s ease, color 0.3s ease;   
+    background: rgb(227, 81, 55);
+    color: #181818;
+   }
+   }
+}

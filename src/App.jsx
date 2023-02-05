@@ -13,10 +13,32 @@ import Hero from './components/hero/Hero';
 import ImageBg from './components/article/imagebg/ImageBg';
 import { About } from './pages/about/About';
 import { Todo } from './pages/todo/Todo';
+import { Modal } from './components/modal/Modal';
+
+
+const ModalContent = () => (
+  <div className='modal_content'>
+   {itemData.map((item, i) => {
+                 return (
+                   <>
+                    <Article
+                     {...item}
+                     key={item.id}
+                   />
+                   </>
+                 );               
+             })}
+  </div>
+);
       
 function App() {
 /*  const [active, setActive] = useState(false); */
   const [currentIdx, setCurrentIdx] = useState(0);
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
 
   const prevBtn = () => {
     if (currentIdx > 0) {
@@ -36,7 +58,9 @@ function App() {
 
   console.log(currentIdx);
   return (
+   
     <div className='App'>
+      
       <Header>
         <Logo />
         <Nav>
@@ -71,14 +95,27 @@ function App() {
                onClick={() => prevBtn()}
              >
                Prev
-             </Button>
+                </Button>
+                {/* Button to show all articles, dont know if im doing this right */}
+                <Button variant='default' onClick={() => (modalOpen ? close() : open())}>
+                  Show All
+                </Button>
              <Button
                variant='default'
                onClick={() => nextBtn()}
              >
                Next
              </Button>
-           </div>
+              </div>
+              
+              {modalOpen && (
+                <Modal
+                modalOpen={modalOpen}
+                handleClose={close}
+                content={<ModalContent />
+                }>                
+                </Modal>
+              )}
           
            </main>
           </>
@@ -88,8 +125,10 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/todo' element={<Todo/>} />
         </Routes>
-      <Footer />
-    </div>
+        <Footer />
+        
+      </div>
+      
   );
 }
 

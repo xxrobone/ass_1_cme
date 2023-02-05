@@ -11,7 +11,7 @@ article {
     border-radius: 5px;
     color: white;
     background-color: rgba(0, 0, 0, 0.766);
-    overflow: hidden;
+    
 
     z-index: 2;
 
@@ -33,16 +33,17 @@ article {
       p {
         margin: 0.5rem;
         float: left;
-        font-size: 0.8rem;   
-        height: fit-content;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-          overflow: hidden;
-        
+        font-size: 0.6rem;   
+        height: 90%;
+
         @media (min-width: 768px) {
-          font-size: 1rem;         
+          font-size: 0.75rem;         
         }
+
+        @media (min-width: 980px) {
+          font-size: 1rem;
+          
+      }
       
       }
        
@@ -53,8 +54,13 @@ article {
           object-fit: cover;
           object-position: center;
           
-          @media (min-width: 768px) {
+          @media (min-width: 980px) {
             width: 240px;
+            height: auto;
+            
+        }
+          @media (min-width: 768px) {
+            width: 160px;
             height: auto;
             
         }
