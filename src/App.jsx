@@ -15,6 +15,8 @@ import { About } from './pages/about/About';
 import { Todo } from './pages/todo/Todo';
 import { Modal } from './components/modal/Modal';
 
+const colors = ['#ff6340', '#ffc130', '#1e847f', '#7a2048']
+
 
 const ModalContent = () => (
   <div className='modal_content'>
@@ -33,17 +35,16 @@ const ModalContent = () => (
       
 function App() {
 
- const [articleTitle, setArticleTitle] = useState();
+ const [articleTitle, setArticleTitle] = useState('');
   const [currentIdx, setCurrentIdx] = useState(0);
-
   const [modalOpen, setModalOpen] = useState(false);
-
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
 
+  
   const prevBtn = () => {
     if (currentIdx > 0) {
-      setCurrentIdx(currentIdx - 1);
+      setCurrentIdx((currNum) => currNum - 1);
     } else {
       setCurrentIdx(itemData.length - 1)
     }
@@ -51,17 +52,25 @@ function App() {
 
   const nextBtn = () => {
     if (currentIdx < itemData.length - 1) {
-      setCurrentIdx(currentIdx + 1);
+      setCurrentIdx((currNum) => currNum + 1);
     } else {
       setCurrentIdx(0)
     }
   }
 
+  /* Had some issues fixing this, but the teacher provided a video and I found the sollutions */
+  /* lama dev https://www.youtube.com/watch?v=Fhu5cu864ag  */
   useEffect(() => {
-      setArticleTitle(itemData[0].title)
-  }, [])
+    console.count('effect run')
+    if (!itemData) {
+      return
+            
+    } else {
+      setArticleTitle(itemData[`${currentIdx}`].title)
+    }
+  }, [currentIdx])
 
-  console.log(currentIdx);
+ /*  console.log(currentIdx); */
   return (
    
     <div className='App'>
@@ -79,14 +88,10 @@ function App() {
           <>           
             <main>
               <Hero />
-              <h3 className='title'>{articleTitle}</h3>
+              <h3 className='title' style={{backgroundColor: colors[currentIdx]}}>{articleTitle}</h3>
            <div className='content_wrapper'>
                 {itemData.map((item, i) => {
-               let t = ''
-                  if (currentIdx === i) {
-                    t = item.title
-                    console.log(t)
-                
+                  if (currentIdx === i) {                                     
                  return (
                    <>
                      <ImageBg {...item} key={Math.random() * 1000 + i} />
@@ -96,8 +101,10 @@ function App() {
                    />
                    </>
                  );
-               }
-             })}
+                  } else {
+                    return
+                  }              
+                })}
            </div>
            <div className='buttons'>
              <Button
