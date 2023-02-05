@@ -32,7 +32,8 @@ const ModalContent = () => (
 );
       
 function App() {
-/*  const [active, setActive] = useState(false); */
+
+ const [articleTitle, setArticleTitle] = useState();
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -56,6 +57,10 @@ function App() {
     }
   }
 
+  useEffect(() => {
+      setArticleTitle(itemData[0].title)
+  }, [])
+
   console.log(currentIdx);
   return (
    
@@ -73,10 +78,15 @@ function App() {
         <Route path='/' element={
           <>           
             <main>
-           <Hero />
+              <Hero />
+              <h3 className='title'>{articleTitle}</h3>
            <div className='content_wrapper'>
-             {itemData.map((item, i) => {
-               if (currentIdx === i) {
+                {itemData.map((item, i) => {
+               let t = ''
+                  if (currentIdx === i) {
+                    t = item.title
+                    console.log(t)
+                
                  return (
                    <>
                      <ImageBg {...item} key={Math.random() * 1000 + i} />
