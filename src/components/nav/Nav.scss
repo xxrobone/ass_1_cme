@@ -1,11 +1,17 @@
 .nav {
-    width: 50%;
+    width: 70%;
     height: 100%;
     background-color: black;
+
+    
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
 }
 
 .menu {
-    height: inherit;
+    height: 100%;
     width: 100%;
     position: relative;
     display: flex;
