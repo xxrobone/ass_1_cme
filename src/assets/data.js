@@ -1,58 +1,58 @@
-import img1 from './images/moonandme.png';
-import img2 from './images/GW.png';
-import img3 from './images/hoodie.png';
+import img1 from "./images/moonandme.png";
+import img2 from "./images/GW.png";
+import img3 from "./images/hoodie.png";
 
 export const navData = [
   {
-    title: 'home',
-    path: '/',
-    cls: 'nav_item',
+    title: "home",
+    path: "/",
+    cls: "nav_item",
     id: 1,
   },
   {
-    title: 'about',
-    path: '/about',
-    cls: 'nav_item',
+    title: "about",
+    path: "/about",
+    cls: "nav_item",
     id: 2,
   },
   {
-    title: 'todo',
-    path: '/todo',
-    cls: 'nav_item',
+    title: "todo",
+    path: "/todo",
+    cls: "nav_item",
     id: 3,
   },
   {
-    title: 'contact',
-    path: '/contact',
-    cls: 'nav_item',
+    title: "contact",
+    path: "/contact",
+    cls: "nav_item",
     id: 4,
   },
 ];
 
 export const itemData = [
   {
-    title: 'My coding experience',
+    title: "My coding experience",
     img: img1,
-    text: 'I have been coding intensively the past 2 years, I have also taken courses on JAVA (basic level) and C# (Basic + level). \nMy main focus has been on html, css and javascript, web-development. I also tried out a few frameworks smaller project in vue, and most projects are done in React or Nextjs. I also like animations and have worked with anime.js and framer-motion. For styling I worked with css, I prefer sass or css.modules, also worked with styled-components is very useful with react, or a smaller libraray called Goober. I have done a few projects You can check out my Portfolio page for that check link below, all done in "vanilla" js, html and css :D',
-    link: 'https://www.robertwagar.se',
+    text: "I have been coding for about 2 years and I have worked with html, css, javascript. (also a little bit of PHP, C# & JAVA.) Frameworks I tested, Vue, Nextjs, mostly worked with React. Some wordpress, used it as a cms in a nextjs project, with GraphQl, sass, framer-motion, react-icons, ",
+    link: "https://www.robertwagar.se",
     id: 1,
   },
   {
-    title: 'My project, DC - dance-connect',
+    title: "Fullmoon calendar - (week3)",
     img: img2,
-    text: 'So for this assignment I wanna do a project, a school app, for teachers and students, controlled by and admin with crud functionality, might try a fake api, or try to build one in mongoDB, firebase or SQL :O If I succeed might be a bigger project, also have all teacher get an attendance list, students see schedule and updates / news, a calendar. And a chat system to communicate, maybe. ',
+    text: "It supposed to be simple so I think this would be do-able, not to hard. Just have a countdown that show days until next fullmoon. If I keep adding is an other story",
     id: 2,
   },
   {
-    title: 'For styling',
+    title: "For styling",
     img: img3,
-    text: 'I will go with sass, react-icons, framer motion, for the layout or tamplate i will try to create something that is not to hard to navigate in. A nice UI that is easy to understand',
+    text: "I will go with sass, react-icons, framer motion, for the layout or tamplate i will try to create something that is not to hard to navigate in. A nice UI that is easy to understand",
     id: 3,
   },
   {
-    title: '?',
-    img: '',
-    text: 'what is going on here',
+    title: "?",
+    img: "",
+    text: "what is going on here",
     id: 4,
   },
 ];

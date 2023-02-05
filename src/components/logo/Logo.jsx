@@ -6,7 +6,7 @@ import './Logo.scss'
 export default function Logo() {
   return (
       <div className='logo'>
-          <h2>Logo title</h2>
+          <h2>Frameworks at cme education</h2>
     </div>
   )
 }

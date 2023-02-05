@@ -4,6 +4,6 @@ import './Hero.scss'
 
 export default function Hero() {
   return (
-    <div className='hero'> <h1>PROJECT REACT CME</h1></div>
+    <div className='hero'> <h1>Assignment 1 - week 1</h1></div>
   )
 }

@@ -9,7 +9,7 @@ export default function Article({ title, img, text, link, id}) {
         <div className="content">
         <p>{text}</p>
         <img src={img} alt={title} />
-        <a className='homepage' href={link} target='_blank'>{link}</a>
+        <a className='link_to' href={link} target='_blank'>{link}</a>
       </div>     
     </article>
   )

@@ -3,11 +3,12 @@ article {
     margin: 0 auto;
     padding: 1rem 1rem;
     position: relative;
-    width: 80%;
-    height: 260px;
+    width: 100%;
+    height: 360px;
     transition: width 0.4s ease-in-out, opacity 0.3s ease-out;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
     color: white;
     background-color: rgba(0, 0, 0, 0.766);
     overflow: hidden;
@@ -26,7 +27,8 @@ article {
       height: 80%;
       display: flex;  
       align-items: center;
-      border: 1px solid orange;
+      border: 1px solid #888;
+      border-radius: 5px;
   
       p {
         margin: 0.5rem;
@@ -34,7 +36,7 @@ article {
         font-size: 0.8rem;   
         height: fit-content;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
           overflow: hidden;
         
@@ -52,19 +54,21 @@ article {
           object-position: center;
           
           @media (min-width: 768px) {
-            width: 300px;
+            width: 240px;
             height: auto;
             
         }
       }
-      .homepage {
-        text-decoration: none;
-        color: rgb(93, 77, 242);
+      .link_to {
+        padding: 0.2rem 0.25rem;
+        max-width: fit-content;
         position: absolute;
         top: 0;
         right: 0;
+        text-decoration: none;
+        color: rgb(166, 166, 166);
         background-color: black;
-        max-width: fit-content;
+        border-bottom-left-radius: 5px;
       }
      
     }  
