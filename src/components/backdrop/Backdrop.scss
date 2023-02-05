@@ -4,6 +4,9 @@
     position: absolute;
     left: 0;
     top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
     min-height: 100vh;
     height: fit-content;
     background: #000000e1;
@@ -12,4 +15,5 @@
     align-self: center;
     justify-content: center;
     z-index: 1000;
+    overflow: hidden;
 }
