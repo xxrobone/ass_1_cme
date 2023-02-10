@@ -1,6 +1,6 @@
 import img1 from './images/moonandme.png';
 import img2 from './images/GW.png';
-import img3 from './images/hoodie.png';
+import img3 from './images/fullmoonwolf.png';
 import img4 from './images/nothing.gif';
 
 export const navData = [
@@ -47,7 +47,8 @@ export const itemData = [
   {
     title: 'For styling',
     img: img3,
-    text: 'I will go with sass, or styled-components, react-icons, framer motion, for the layout or tamplate i will try to create something that is not to hard to navigate in. A nice UI that is easy to understand, if we have to use and other template or design then I will do my best to implement it on the project',
+    text: 'I will go with sass, or styled-components, react-icons, framer motion, want to have an svg moon that changes postions depending on how many days is left for next fullmoon, for the layout or tamplate i will try to create something that is not to hard to navigate in. A nice UI that is easy to understand, if we have to use and other template or design then I will do my best to implement it on the project',
+    link: 'https://dribbble.com/shots/6087619-Landscapes-02',
     id: 3,
   },
   {
