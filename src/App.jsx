@@ -68,6 +68,7 @@ function App() {
             
     } else {
       setArticleTitle(itemData[`${currentIdx}`].title)
+      document.title = itemData[`${currentIdx}`].title
     }
   }, [currentIdx])
 
